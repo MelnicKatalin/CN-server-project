@@ -24,7 +24,7 @@ int main()
     int client_socket[3] = {0};
     int len;
     struct sockaddr_in sevaddr, cli;
-    sockfd = socket(AF_INET, SOCK_STREAM, 0); // listener socket
+    sockfd = socket(AF_INET, SOCK_STREAM, 0); 
     char buffer[1025];
     fd_set readfds;
     std::string message = "The maximum number of clients has been reached";
@@ -45,8 +45,8 @@ int main()
     }
 
     sevaddr.sin_family = AF_INET;
-    sevaddr.sin_addr.s_addr = htonl(INADDR_ANY); // local ad
-    sevaddr.sin_port = htons(PORT); // most significant byte first
+    sevaddr.sin_addr.s_addr = htonl(INADDR_ANY); 
+    sevaddr.sin_port = htons(PORT); 
     
     int bindfd = bind(sockfd, (SA*)&sevaddr, sizeof(sevaddr));
     if(bindfd < 0)
